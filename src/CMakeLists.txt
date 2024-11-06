@@ -1,0 +1,1 @@
+add_executable(MyExecutable main.cpp MyClass.cpp)

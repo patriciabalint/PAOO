@@ -1,14 +1,22 @@
-#include <iostream>
-#include "MyClass.h"
+#include "Book.h"
 
 int main() {
-    MyClass obj(10);
+    // Crearea unei cărți (constructor normal)
+    Book b1("1984", "George Orwell", 328);
+    b1.display();
 
-    std::cout << "Valoarea inițială: " << obj.getMyAttribute() << std::endl;
+    // Crearea unei copii a cărții (copy constructor)
+    Book b2 = b1;
+    b2.display();
 
-    obj.setMyAttribute(20);
+    // Mutarea unei cărți (move constructor)
+    Book b3 = std::move(b1);
+    b3.display();
 
-    std::cout << "Noua valoare: " << obj.getMyAttribute() << std::endl;
+    // Modificarea unei cărți (setters și getters)
+    b3.setPages(400);
+    b3.display();
 
+    // Destructorii sunt apelați automat la final
     return 0;
 }

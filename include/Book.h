@@ -11,8 +11,8 @@ private:
     int* pages; // numărul de pagini, alocat dinamic
 
 public:
-    // Constructor normal
-    Book(const std::string& title, const std::string& author, int pages);
+    // Constructor cu valori implicite
+    Book(const std::string& title = "Necunoscut", const std::string& author = "Necunoscut", int pages = 0);
 
     // Copy constructor
     Book(const Book& other);

@@ -1,6 +1,6 @@
 #include "Book.h"
 
-// Constructor normal
+// Constructor normal (cu valori implicite)
 Book::Book(const std::string& title, const std::string& author, int pages)
     : title(title), author(author) {
     this->pages = new int(pages); // Alocare dinamică
@@ -25,7 +25,8 @@ Book::Book(Book&& other) noexcept
 Book::~Book() {
     if (pages) {
         delete pages; // Eliberare memorie
-        std::cout << "Destructor apelat pentru cartea \"" << title << "\".\n";
+        std::cout << "Destructor apelat pentru cartea \"" << title 
+                  << "\". Memoria pentru pagini a fost eliberată.\n";
     }
 }
 
